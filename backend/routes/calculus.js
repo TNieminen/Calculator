@@ -2,9 +2,8 @@ const { create, all } = require('mathjs')
 const express = require('express')
 const response = require('../utils/response')
 
-const { math } = create(all)
+const math = create(all)
 const { evaluate } = math
-
 /**
  * @see https://mathjs.org/docs/expressions/security.html
  */
