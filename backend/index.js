@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false })) // decodes urlEncoded https://e
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors({
-  credentials: true,
+  // credentials: true,
   origin(origin, callback) {
     const whitelistEnv = whitelist[process.env.NODE_ENV] || whitelist.development
     return !origin || matchOrigin(origin, whitelistEnv) ? callback(null, true) : callback(new Error('Not allowed by CORS'))
