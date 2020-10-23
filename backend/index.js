@@ -4,7 +4,7 @@ const logger = require('morgan')
 const cors = require('cors')
 const { whitelist, matchOrigin } = require('./utils/whitelist')
 const response = require('./utils/response')
-const calculusRouter = require('./routes/calculus')
+const calculusRouter = require('./routes/calculus/v1')
 
 const { NODE_ENV } = process.env
 
@@ -51,8 +51,11 @@ app.use((req, res, next) => {
 })
 
 // error handler
-app.use((err, req, res) => {
-  res.status(err.status || 500).send(response.error(err.message))
+app.use((err, req, res, next) => {
+  if(res.headersSent) {
+    return next(err)
+  }
+  return res.status(err.status || 500).send(response.error(err.message))
 })
 
 module.exports = app
