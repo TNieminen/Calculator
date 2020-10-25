@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "test": "NODE_ENV=test nyc mocha"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
