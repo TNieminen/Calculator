@@ -12,8 +12,8 @@ const { NODE_ENV } = process.env
  * ANCHOR App Setup
  */
 const app = express()
-app.use(express.json()) // parses json bodies https://expressjs.com/en/api.html#express.json
-app.use(express.urlencoded({ extended: false })) // decodes urlEncoded https://expressjs.com/en/api.html#express.urlencoded
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(cors({
   // credentials: true,
   origin(origin, callback) {
