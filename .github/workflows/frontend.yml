@@ -1,0 +1,38 @@
+name: "backend"
+
+# https://dev.to/stackdumper/setting-up-ci-for-microservices-in-monorepo-using-github-actions-5do2
+on:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)
+        required: false
+  push:
+    branches:
+      - "main"
+    # run the workflow only on changes
+    # to the auth route and auth workflow
+    paths:
+      - "./frontend/**/*"
+      - ".github/workflows/frontend.yml"
+  pull_request:
+    types: [synchronize, opened, reopened]
+    paths:
+      - "./backend/**/*"
+      - ".github/workflows/frontend.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_iddefaultsrun
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: https://registry.npmjs.org/
+      - run: yarn install
+      - run: yarn test
