@@ -1,4 +1,4 @@
-name: "backend"
+name: "frontend"
 
 # https://dev.to/stackdumper/setting-up-ci-for-microservices-in-monorepo-using-github-actions-5do2
 on:
@@ -18,7 +18,7 @@ on:
   pull_request:
     types: [synchronize, opened, reopened]
     paths:
-      - "./backend/**/*"
+      - "./frontend/**/*"
       - ".github/workflows/frontend.yml"
 
 jobs:
