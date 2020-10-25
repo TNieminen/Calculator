@@ -1,0 +1,22 @@
+# See docs for help with netlify.toml files
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+# [build]
+#   base = "/"
+#  publish = "public"
+#  command = "yarn generate"
+
+# At the moment there is no way to have env specific variables
+# without using the git-pushed .toml file
+# @see https://community.netlify.com/t/can-i-have-a-different-set-of-environment-variables-for-deploy-previews/15235/3
+[context.production.environment]
+  NODE_ENV = "production"
+  VUE_APP_API_SERVER_ADDRESS = "https://badger-calculator.herokuapp.com"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "staging"
+  VUE_APP_API_SERVER_ADDRESS = "https://badger-calculator.herokuapp.com"
+
+# [[headers]]
+#   for = "/_nuxt/*" # cache immutable files for up to 1 year
+#   [headers.values]
+#     Cache-Control = "public, max-age=31536000, immutable"
