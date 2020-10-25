@@ -11,7 +11,7 @@ on:
     # run the workflow only on changes
     # to the auth route and auth workflow
     paths:
-      - "./backend/**"
+      - "./backend/**/*.js"
       - ".github/workflows/backend.yaml"
 
 jobs:
