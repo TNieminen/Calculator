@@ -11,7 +11,7 @@ on:
     # run the workflow only on changes
     # to the auth route and auth workflow
     paths:
-      - "backend/**"
+      - "./backend/**"
       - ".github/workflows/backend.yaml"
 
 jobs:
@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
+        # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_iddefaultsrun
         working-directory: backend
     steps:
       - uses: actions/checkout@v2
