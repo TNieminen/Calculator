@@ -2,6 +2,11 @@ name: "backend"
 
 # https://dev.to/stackdumper/setting-up-ci-for-microservices-in-monorepo-using-github-actions-5do2
 on:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)
+        required: false
   push:
     # run the workflow only on changes
     # to the auth route and auth workflow
