@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     calculate() {
-      fetch(`${this.serverUrl}:${this.serverPort}/calculus?query=${btoa(this.input)}`)
+      fetch(`${this.serverUrl}/calculus?query=${btoa(this.input)}`)
         .then(res => res.json())
         .then(res => {
           if (res.error) {
