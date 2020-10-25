@@ -17,6 +17,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
     steps:
       - uses: actions/checkout@v2
         # with:
@@ -25,7 +28,6 @@ jobs:
         with:
           node-version: "12.x"
           registry-url: https://registry.npmjs.org/
-      - run: cd ./backend
       - run: yarn install
         # env:
         #   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
