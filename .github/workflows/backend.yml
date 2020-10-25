@@ -8,10 +8,17 @@ on:
         description: Git Ref (Optional)
         required: false
   push:
+    branches:
+      - "master"
     # run the workflow only on changes
     # to the auth route and auth workflow
     paths:
       - "./backend/**/*.js"
+      - ".github/workflows/backend.yml"
+  pull_request:
+    types: [synchronize, opened, reopened]
+    paths:
+      - "./backend/**/*"
       - ".github/workflows/backend.yml"
 
 jobs:
@@ -23,15 +30,9 @@ jobs:
         working-directory: backend
     steps:
       - uses: actions/checkout@v2
-        # with:
-        # ref: ${{ github.event.pull_request.merge_commit_sha }}
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-        # env:
-        #   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: yarn test
-        # env:
-        #   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
