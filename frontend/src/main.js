@@ -6,10 +6,19 @@ import Chakra, {
   CBox,
   CReset
 } from "@chakra-ui/vue"
+import { faCalculator,  } from '@fortawesome/free-solid-svg-icons'
 import App from "./App.vue"
+// import "dotenv-defaults/config"
 
 // Import Chakra UI Plugin and register it.
-Vue.use(Chakra)
+Vue.use(Chakra,{
+  icons:{
+    iconPack:'fa',
+    iconSet:{
+      faCalculator
+    }
+  }
+})
 
 Vue.config.productionTip = false
 
