@@ -9,7 +9,7 @@ on:
         required: false
   push:
     branches:
-      - "master"
+      - "main"
     # run the workflow only on changes
     # to the auth route and auth workflow
     paths:
