@@ -1,9 +1,9 @@
 # See docs for help with netlify.toml files
 # https://docs.netlify.com/configure-builds/file-based-configuration/
-[build]
-  base = "/"
-  publish = "public"
-  command = "yarn generate"
+# [build]
+#   base = "/"
+#  publish = "public"
+#  command = "yarn generate"
 
 [build.environment]
   CI = "1"
@@ -12,9 +12,9 @@
 # without using the git-pushed .toml file
 # @see https://community.netlify.com/t/can-i-have-a-different-set-of-environment-variables-for-deploy-previews/15235/3
 [context.production.environment]
-  NODE_ENV = "production"
-  API_SERVER_ADDRESS = "https://api.akkadu.com"
-  LOGLEVEL = "warn"
+#  NODE_ENV = "production"
+#  API_SERVER_ADDRESS = "https://api.akkadu.com"
+#  LOGLEVEL = "warn"
 
 [context.deploy-preview.environment]
   NODE_ENV = "staging"
