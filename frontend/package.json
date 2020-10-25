@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@chakra-ui/vue": "^0.6.6",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "core-js": "^3.6.5",
     "emotion": "^10.0.27",
     "eslint-config-prettier": "^6.13.0",
@@ -19,7 +20,6 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "vue-template-compiler": "^2.6.11",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",
@@ -34,6 +34,7 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "vue-template-compiler": "^2.6.11"
   }
 }
