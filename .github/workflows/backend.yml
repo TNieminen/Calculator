@@ -1,0 +1,28 @@
+name: "backend"
+
+# https://dev.to/stackdumper/setting-up-ci-for-microservices-in-monorepo-using-github-actions-5do2
+on:
+  push:
+    # run the workflow only on changes
+    # to the auth route and auth workflow
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        # with:
+        # ref: ${{ github.event.pull_request.merge_commit_sha }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: https://registry.npmjs.org/
+      - run: yarn install
+        # env:
+        #   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: yarn test
+        # env:
+        #   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
