@@ -6,8 +6,7 @@ const development = [
   /http:\/\/localhost:[0-9]+$/, // localhost
 ]
 const production = [
-  /http:\/\/192\.168\.[0-9]+\.[0-9]+/, // allow connections from local network to dev server, useful for mobile debugging
-  /http:\/\/localhost:[0-9]+$/, // localhost
+  /https:\/\/badger-calculator.netlify.app$/,
 ]
 
 exports.whitelist = {
