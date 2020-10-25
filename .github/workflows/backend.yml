@@ -12,7 +12,7 @@ on:
     # to the auth route and auth workflow
     paths:
       - "./backend/**/*.js"
-      - ".github/workflows/backend.yaml"
+      - ".github/workflows/backend.yml"
 
 jobs:
   test:
