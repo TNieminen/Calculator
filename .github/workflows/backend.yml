@@ -13,12 +13,12 @@ on:
     # run the workflow only on changes
     # to the auth route and auth workflow
     paths:
-      - "./backend/**"
+      - "./backend/**/**/*"
       - ".github/workflows/backend.yml"
   pull_request:
     types: [synchronize, opened, reopened]
     paths:
-      - "./backend/**"
+      - "./backend/**/**/*"
       - ".github/workflows/backend.yml"
 
 jobs:

@@ -1,7 +1,16 @@
-# Calculator
-A simple calculator service including a frontend and a API for the logic
+# Description
 
-# Assignment
+This is a monorepo introducing a calculator backend and frontend service where 
+we can send string based calculations to our API and receive the response as a string.
+
+
+## Parts of the project
+
+- `./backend` backend node.js express api service deployed to Heroku
+- `./frontend` simple frontend to communicate with the API written in Vue 2 and deployed to Netlify
+
+
+## Project Goal
 
 === Description ==
 
@@ -28,33 +37,42 @@ A simple calculator service including a frontend and a API for the logic
 	There are some constraints that you need to follow. These are followed by some tips and ideas that you can choose to follow if you wish.
 
 	Required:
-Use a programming language of your choice.
-The API needs to be testable online from Futurice office.
-Consider adding automated tests where it makes sense.
-When writing your code, imagine the service is meant to be released to production (with a low-to-moderate expected load).
-Heroku or AWS might be a good place to publish your service. Please document your deployment process.
-The source code should be shared, either on public repository or a repository that Futurice can access. For example, GitHub is a good option.
-
-Please provide us your code and explanation by next Monday evening, so that your interview partners have a bit of time to review it.
-
-# SEO
-https://medium.com/binarcode/make-your-vue-js-application-seo-friendly-dea3d004a58c
+  Use a programming language of your choice.
+  The API needs to be testable online from Futurice office.
+  Consider adding automated tests where it makes sense.
+  When writing your code, imagine the service is meant to be released to production (with a low-to-moderate expected load).
+  Heroku or AWS might be a good place to publish your service. Please document your deployment process.
+  The source code should be shared, either on public repository or a repository that Futurice can access. For example, GitHub is a good option.
 
 
-https://github.com/abbr/deasync/issues/106
 
+## TODO
 
-https://cli.vuejs.org/guide/creating-a-project.html#vue-create
+- [x] Finish up frontend
+- [x] Create backend
+- [x] Create integration tests for backend
+- [x] Create github actions testing pipeline for backend
+- [x] Create github actions testing pipeline for frontend
+- [x] Create a deployment for backend // heroku with auto scaling
+- [x] Create a deployment for frontend // netlify static site
+- [x] Add unit tests to frontend
+- [x] Add unit tests to backend
+- [x] Clean up backend
+- [x] Clean up frontend
+- [x] Add test on push on both repos
+- [x] Add Scaling to backend
+- [x] Update backend README
+- [x] Update frontend README
+- [x] Update project README
 
+## Optimizations
 
-Chakra 
-
-https://codesandbox.io/s/chakra-ui-vue-starter-2sy0g?file=/package.json:337-343
-
-
-# TODO
-
+- [ ] Add proper unit tests for frontend
+- [ ] Add unit tests for backend services
+- [ ] Add pages and routing to frontend
 - [ ] Add commitlint
-- [ ] Finish up frontend
-- [ ] Create backend
-- [ ] Play around with theming
+- [ ] Add linting on commit (per repo)
+- [ ] Dockerize app
+
+
+
