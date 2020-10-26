@@ -1,6 +1,5 @@
 name: "frontend"
 
-# https://dev.to/stackdumper/setting-up-ci-for-microservices-in-monorepo-using-github-actions-5do2
 on:
   workflow_dispatch:
     inputs:
@@ -10,15 +9,17 @@ on:
   push:
     branches:
       - "main"
-    # run the workflow only on changes
-    # to the auth route and auth workflow
     paths:
-      - "./frontend/**/**/*"
+      - "./frontend/src/*.js"
+      - "./frontend/components/**/*.vue"
+      - "./frontend/pages/**/*.vue"
       - ".github/workflows/frontend.yml"
   pull_request:
     types: [synchronize, opened, reopened]
     paths:
-      - "./frontend/**/**/*"
+      - "./frontend/src/*.js"
+      - "./frontend/components/**/*.vue"
+      - "./frontend/pages/**/*.vue"
       - ".github/workflows/frontend.yml"
 
 jobs:
@@ -26,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_iddefaultsrun
         working-directory: frontend
     steps:
       - uses: actions/checkout@v2
