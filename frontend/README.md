@@ -63,9 +63,9 @@ yarn dev
 Want to make a change?
 
 1. Clone the repo
-2. Create your Feature Branch (`gco -b release/my-project`)
-3. Commit your Changes (`git commit -m 'add: small addition'`)
-4. Push to the Branch (`git push origin release/my-project`)
+2. Create your Feature Branch (feat/fix/chore) (`git checkout -b fix/my-fix`)
+3. Commit your Changes (feat/fix/chore) (`git commit -m 'fix/: small fix'`)
+4. Push to the Branch (`git push origin fix/my-fix`)
 5. Open a Pull Request
 6. PR can be merged when it is reviewed and the tests CI tests pass
 

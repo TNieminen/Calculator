@@ -4,17 +4,20 @@ This is a monorepo introducing a calculator backend and frontend service where
 we can send string based calculations to our API and receive the response as a string.
 
 
-## Parts of the project
+## Project structure
 
 - `./backend` backend node.js express api service deployed to Heroku
 - `./frontend` simple frontend to communicate with the API written in Vue 2 and deployed to Netlify
 
+Both services use Github Actions for running tests on pr open, update and merge.
+Netlify deployments happen on merge to main when updates concern files in frontend service.
+Heroku deployments happen similarly on changes to backend service.
 
 ## Test the project
 
 - Access the frontend [here](https://badger-calculator.netlify.app/)
 - Test the API (via Swagger) [here](https://badger-calculator.herokuapp.com/)
-  
+
 ## Project Goal
 
 === Description ==
