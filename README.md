@@ -10,6 +10,11 @@ we can send string based calculations to our API and receive the response as a s
 - `./frontend` simple frontend to communicate with the API written in Vue 2 and deployed to Netlify
 
 
+## Test the project
+
+- Access the frontend [here](https://badger-calculator.netlify.app/)
+- Test the API (via Swagger) [here](https://badger-calculator.herokuapp.com/)
+  
 ## Project Goal
 
 === Description ==
