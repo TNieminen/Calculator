@@ -2,9 +2,11 @@ const createError = require('http-errors')
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+const swaggerUI = require('swagger-ui-express')
 const { whitelist, matchOrigin } = require('./utils/whitelist')
 const response = require('./utils/response')
 const calculusRouter = require('./routes/calculus/v1')
+const { swaggerOptions, swaggerSpecs } = require('./utils/swagger') 
 
 const { NODE_ENV } = process.env
 
@@ -40,7 +42,10 @@ switch (NODE_ENV) {
  * ANCHOR Routes
  */
 app.use('/calculus', calculusRouter)
+app.use('/v1/calculus', calculusRouter)
 
+// ANCHOR Docs
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpecs, swaggerOptions))
 
 /**
  * ANCHOR Request handlers
