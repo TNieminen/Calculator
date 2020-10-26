@@ -35,5 +35,8 @@
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-jsdoc": "^30.7.3",
     "eslint-plugin-prettier": "^3.1.4"
+  },
+  "resolutions": {
+    "constantinople":"^3.1.1"
   }
 }
