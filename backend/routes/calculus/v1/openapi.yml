@@ -1,0 +1,41 @@
+openapi: 3.0.0
+
+info:
+  title: 'Calculus'
+  version: '1.0.0'
+
+components:
+  parameters:
+    calculationParam:
+      name: query
+      in: query
+      description: calculation that is a Base64 encoded string
+      schema:
+        type: string
+        format: byte
+      example: 'MiAqICgyMy8oMyozKSktIDIzICogKDIqMyk='
+
+  responses:
+    successResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              error:
+                type: boolean
+                example: false
+              result:
+                type: string
+
+    errorResponse:
+      description: Error
+      content:
+        application/json:
+          schema:
+            properties:
+              error:
+                type: boolean
+                example: true
+              message:
+                type: string

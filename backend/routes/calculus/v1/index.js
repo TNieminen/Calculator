@@ -8,7 +8,28 @@ const { checkValidationResult } = require('../../../utils/validator')
 const router = express.Router()
 
 
-/* GET home page. */
+/**
+ * GET /calculus.
+ *
+ * @description Get calculation result by query.
+ * @param {Request} req
+ * @param {Response} res
+ * @swagger
+ * /calculus:
+ *    get:
+ *      summary: Get calculation result by query.
+ *      tags:
+ *        - Calculus
+ *      parameters:
+ *        - $ref: '#/components/parameters/calculationParam'
+ *      responses:
+ *        200:
+ *          $ref: '#/components/responses/successResponse'
+ *        400:
+ *          $ref: '#/components/responses/errorResponse'
+ *        500:
+ *          $ref: '#/components/responses/errorResponse'
+ */
 router.get('/', validateGetCalculusByQuery, checkValidationResult, (req, res) => {
   res.status(200).send(response.success(v1Controller.getCalculusQuery(req.query.query)))
 })
