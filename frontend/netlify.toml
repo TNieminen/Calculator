@@ -15,7 +15,7 @@
 [context.deploy-preview.environment]
   NODE_ENV = "staging"
   VUE_APP_API_SERVER_ADDRESS = "https://badger-calculator.herokuapp.com"
-  ignore = "git diff --quiet HEAD^ HEAD frontend/"
+  ignore = "git diff --quiet HEAD^ HEAD backend/"
 
 # [[headers]]
 #   for = "/_nuxt/*" # cache immutable files for up to 1 year
